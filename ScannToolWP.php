@@ -22,14 +22,34 @@ function ScanToolWpMenu()
 
 add_action ('admin_menu', 'ScanToolWpMenu');
 
+function STWPHomeMenu()
+{
+    
+echo "<h2>Gracias por Instalar este Plugin! Seleccion cualquier Opcion del Menu!</h2>";
+
+echo "<a href='../wp-admin/admin.php?page=STWP-Dashboard'><button>Dashboard</button></a><br><br>";
+echo "<a href='../wp-admin/admin.php?page=STWP-About'><button>About</button></a><br><br>";
+
+}
+
 function STWPDashboard()
 {
-echo "dsa";
+    
+echo "<h2>Datos Sitio Web</h2>";
+echo "Nombre del Sitio Web: ", get_bloginfo( 'name' ), "<br>";
+echo "Version Instalacion Wordpress: ", bloginfo('version'), "<br>";
+echo "Direccion de Instalacion: ", home_url();
+
 }
 
 function STWPAbout()
 {
-  echo "Walrus";
+echo "<h2>About</h2>";
+echo "Nombre del Autor del Plugin: Carlos Saumeth<br><br>";
+echo "<a href='https://www.facebook.com/nativapps' target='_blank'><button>Facebook</button></a><br><br>";
+echo "<a href='https://www.instagram.com/nativapps/' target='_blank'><button>Instagram</button></a><br><br>";
+echo "<a href='https://www.linkedin.com/company/nativapps-inc/' target='_blank'><button>LinkedIn</button></a><br><br>";
 }
+
 
 ?>
