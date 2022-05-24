@@ -1,2 +1,2 @@
 # ScanToolWP
-Plugin Creado para Prueba Laboral
+ScanToolWP by Carlos Saumeth
