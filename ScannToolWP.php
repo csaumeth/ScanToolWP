@@ -15,15 +15,16 @@
 add_action("admin_menu", "ScanToolWpMenu");
 function ScanToolWpMenu()
 {
-  add_menu_page("ScanToolWpMenu", "Dashboard", 4, "STWP-Dashboard", "STWPDashboardMenu" );
-   add_submenu_page("About-ScanToolWp", "About", "Option 1", 4, "STWP-About", "STWPAbout");
+  add_menu_page(" Home - Scan Tool Wp", "Scan Tool Wp", 4, "STWP-Home", "STWPHomeMenu" );
+  add_submenu_page("STWP-Home", "Dashboard - Scan Tool Wp", "Dashboard", 4, "STWP-Dashboard", "STWPDashboard");
+  add_submenu_page("STWP-Home", "About - Scan Tool Wp", "About", 4, "STWP-About", "STWPAbout");
 }
 
-function STWPDashboardMenu()
+add_action ('admin_menu', 'ScanToolWpMenu');
+
+function STWPDashboard()
 {
-
 echo "dsa";
-
 }
 
 function STWPAbout()
