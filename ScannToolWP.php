@@ -35,7 +35,7 @@ echo "<a href='../wp-admin/admin.php?page=STWP-About'><button>About</button></a>
 
 }
 
-/** Funcion Menu Dashboard s**/
+/** Funcion Menu Dashboard**/
 function STWPDashboard()
 {
     
