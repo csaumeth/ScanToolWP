@@ -63,18 +63,18 @@ foreach ($all_themes as $theme) {
 
 /** Cargar Directorio Plugins Instalados **/
 
-if ( ! function_exists( 'get_plugins' ) ) {
-	require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-/** Cargar Plugins Instalados **/	
-$all_plugins = get_plugins();
-
-/** Listar Plugins Instalados **/
-foreach ($all_plugins as $plugin) {
-  echo ('<b>Nombre del Plugin: </b>'),($plugin->get('Name'))," // ";
-  echo ('<b>Estado del Plugin: </b>'),($plugin->get('Status')),"<br>";
+$active = get_option('active_plugins');
+$plugins = get_plugins();
+foreach ($plugins as $key => $plugin) {
+    $name = $plugin['Name'];
+    if (in_array($key, $active)){
+        $status = 'active';
+    } else {
+        $status = 'not activated';
+    }
+    
+print_r ($plugins); 
 }
-var_dump($all_plugins);}
 
 #Espacio
 
