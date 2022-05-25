@@ -47,10 +47,12 @@ echo "<b>Version Instalacion Wordpress: </b>", bloginfo('version'), "<br>";
 
 #Espacio
 
-// Carga de Themas Instalados
+
+/** Carga de Themas Instalados **/
 $all_themes = get_themes();
 
-// Build theme data manually
+
+/** Listar Temas Instalados **/
 echo "<b>Temas Instalados:</b>","<br>";
 foreach ($all_themes as $theme) {
   echo ('<b>Nombre del Tema: </b>'),($theme->get('Name'))," // ";
@@ -75,6 +77,16 @@ $author_id = get_the_author_meta('ID');
 echo count_user_posts($admin),"<br>";
 
 }
+
+
+if ( ! function_exists( 'get_plugins' ) ) {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+}
+
+$all_plugins = get_plugins();
+echo $all_plugins;
+
+
 
 /** Funcion Menu About **/
 function STWPAbout()
