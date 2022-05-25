@@ -61,10 +61,22 @@ foreach ($all_themes as $theme) {
 
 #Espacio
 
-/** Lista de Plugins Instalados **/
-echo "<b>Lista de Plugins Instalados/Activos: </b>",
-$author_id = get_the_author_meta('ID');
-echo count_user_posts($admin),"<br>";
+/** Cargar Directorio Plugins Instalados **/
+
+if ( ! function_exists( 'get_plugins' ) ) {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+/** Cargar Plugins Instalados **/	
+$all_plugins = get_plugins();
+
+/** Listar Plugins Instalados **/
+foreach ($all_plugins as $plugin) {
+  echo ('<b>Nombre del Plugin: </b>'),($plugin->get('Name'))," // ";
+  echo ('<b>Estado del Plugin: </b>'),($plugin->get('Status')),"<br>";
+}
+var_dump($all_plugins);}
+
+#Espacio
 
 /** Numero de Paginas Publicadas **/
 $count_pages = wp_count_posts('page');
@@ -77,16 +89,6 @@ $author_id = get_the_author_meta('ID');
 echo count_user_posts($admin),"<br>";
 
 }
-
-
-if ( ! function_exists( 'get_plugins' ) ) {
-	require_once ABSPATH . 'wp-admin/includes/plugin.php';
-}
-
-$all_plugins = get_plugins();
-echo $all_plugins;
-
-
 
 /** Funcion Menu About **/
 function STWPAbout()
