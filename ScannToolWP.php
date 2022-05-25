@@ -113,7 +113,7 @@ echo "<h2>About</h2>";
 echo "Nombre del Autor del Plugin: Carlos Saumeth<br><br>";
 echo "<a href='https://www.facebook.com/csaumeth' target='_blank'><button>Facebook</button></a><br><br>";
 echo "<a href='https://www.instagram.com/csaumeth' target='_blank'><button>Instagram</button></a><br><br>";
-echo "<a href='https://www.linkedin.com/in/csaumeth/' target='_blank'><button>LinkedIn</button></a><br><br>";
+echo "<a href='https://www.linkedin.com/in/csaumeth' target='_blank'><button>LinkedIn</button></a><br><br>";
 }
 
 ?>
