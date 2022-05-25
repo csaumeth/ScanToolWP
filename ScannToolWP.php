@@ -45,10 +45,24 @@ echo "Direccion de Instalacion: ", home_url(),"<br>";
 echo "Direccion del Sitio Web: ", site_url(),"<br>";
 echo "Version Instalacion Wordpress: ", bloginfo('version'), "<br>";
 
-/** Lista de Temas Instalados **/
-echo "Lista de Temas Instalados/Activos: ",
-$author_id = get_the_author_meta('ID');
-echo count_user_posts($admin),"<br>";
+// Creacion de Array Vacio
+$themes = array();
+
+// Carga de Themas Instalados
+$all_themes = get_themes();
+
+// Build theme data manually
+foreach ($all_themes as $theme) {
+  $themes{ $theme->stylesheet } = array(
+    'Name' => $theme->get('Name'),
+    'Status' => $theme->get('Status')
+  );
+}
+
+// Imprimir Temas
+echo('<pre>');
+var_dump($themes);
+echo('</pre>');
 
 /** Lista de Plugins Instalados **/
 echo "Lista de Plugins Instalados/Activos: ",
