@@ -80,9 +80,9 @@ echo '<b>Plugins Instalados:</b><br>';
 foreach ($plugins as $key => $plugin) {
     $name = $plugin['Name'];
     if (in_array($key, $active)){
-        $status = '<b>Activo</b>';
+        $status = '<b><font color="rgb(128, 128, 0)">Activo</font></b>';
     } else {
-        $status = 'No Activo';
+        $status = '<b><font color="FF0000">No Activo</font></b>';
     }
     echo '<strong>Nombre del Plugin:</strong> '.$name.' <strong>// Estado del Plugin:</strong> '.$status.'<br>';
 }
