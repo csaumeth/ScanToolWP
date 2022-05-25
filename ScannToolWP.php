@@ -49,13 +49,18 @@ echo "<b>Version Instalacion Wordpress: </b>", bloginfo('version'), "<br>";
 
 
 /** Carga de Themas Instalados **/
-$all_themes = get_themes();
+$active_theme = get_option('stylesheet');
+$themes = wp_get_themes();
 
-/** Listar Temas Instalados **/
-echo "<b>Temas Instalados:</b>","<br>";
-foreach ($all_themes as $theme) {
-  echo ('<b>Nombre del Tema: </b>'),($theme->get('Name'))," // ";
-  echo ('<b>Estado del Tema: </b>'),($theme->get('Status')),"<br>";
+echo '<b>Temas Instalados:</b><br>';
+foreach ($themes as $key => $theme) {
+    $name = $theme->get('Name');
+    if ($key == $active_theme){
+        $status = '<b><font color="rgb(128, 128, 0)">Activo</font></b>';
+    } else {
+        $status = '<b><font color="FF0000">No Activo</font></b>';
+    }
+    echo '<strong>Nombre del Tema: </strong> '.$name.' <strong>// Estado del Tema: </strong> '.$status.'<br>';
 }
 
 #Espacio
