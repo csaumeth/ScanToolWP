@@ -81,7 +81,7 @@ echo 'Complementos Instalados:<br>';
 foreach ($plugins as $key => $plugin) {
     $name = $plugin['Name'];
     if (in_array($key, $active)){
-        $status = 'Activo';
+        $status = '<b>Activo</b>';
     } else {
         $status = 'No Activo';
     }
