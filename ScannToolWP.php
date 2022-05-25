@@ -61,7 +61,7 @@ foreach ($all_themes as $theme) {
 
 #Espacio
 
-/** Cargar Directorio Plugins Instalados **/
+/** Consultar Plugins Instalados **/
 
 $active = get_option('active_plugins');
 $plugins = get_plugins();
@@ -73,7 +73,19 @@ foreach ($plugins as $key => $plugin) {
         $status = 'not activated';
     }
     
-print_r ($plugins); 
+}
+
+/** Imprimir Plugins Instalados **/
+
+echo 'Complementos Instalados:<br>';
+foreach ($plugins as $key => $plugin) {
+    $name = $plugin['Name'];
+    if (in_array($key, $active)){
+        $status = 'Activo';
+    } else {
+        $status = 'No Activo';
+    }
+    echo '<strong>Nombre del Plugin:</strong> '.$name.' <strong>// Estado del Plugin:</strong> '.$status.'<br>';
 }
 
 #Espacio
