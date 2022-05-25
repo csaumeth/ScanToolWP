@@ -53,7 +53,7 @@ $all_themes = get_themes();
 // Build theme data manually
 echo "<b>Temas Instalados:</b>","<br>";
 foreach ($all_themes as $theme) {
-  echo ('<b>Nombre del Tema: </b>'),($theme->get('Name')),"<br>";
+  echo ('<b>Nombre del Tema: </b>'),($theme->get('Name'))," // ";
   echo ('<b>Estado del Tema: </b>'),($theme->get('Status')),"<br>";
 }
 
