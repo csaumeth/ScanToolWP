@@ -51,7 +51,6 @@ echo "<b>Version Instalacion Wordpress: </b>", bloginfo('version'), "<br>";
 /** Carga de Themas Instalados **/
 $all_themes = get_themes();
 
-
 /** Listar Temas Instalados **/
 echo "<b>Temas Instalados:</b>","<br>";
 foreach ($all_themes as $theme) {
@@ -77,7 +76,7 @@ foreach ($plugins as $key => $plugin) {
 
 /** Imprimir Plugins Instalados **/
 
-echo 'Complementos Instalados:<br>';
+echo '<b>Plugins Instalados:</b><br>';
 foreach ($plugins as $key => $plugin) {
     $name = $plugin['Name'];
     if (in_array($key, $active)){
