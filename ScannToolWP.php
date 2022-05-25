@@ -40,42 +40,37 @@ function STWPDashboard()
 {
     
 echo "<h2>Datos Sitio Web</h2>";
-echo "Nombre del Sitio Web: ", get_bloginfo( 'name' ), "<br>";
-echo "Direccion de Instalacion: ", home_url(),"<br>";
-echo "Direccion del Sitio Web: ", site_url(),"<br>";
-echo "Version Instalacion Wordpress: ", bloginfo('version'), "<br>";
+echo "<b>Nombre del Sitio Web: </b>", get_bloginfo( 'name' ), "<br>";
+echo "<b>Direccion de Instalacion: </b>", home_url(),"<br>";
+echo "<b>Direccion del Sitio Web: </b>", site_url(),"<br>";
+echo "<b>Version Instalacion Wordpress: </b>", bloginfo('version'), "<br>";
 
-// Creacion de Array Vacio
-$themes = array();
+#Espacio
 
 // Carga de Themas Instalados
 $all_themes = get_themes();
 
 // Build theme data manually
+echo "<b>Temas Instalados:</b>","<br>";
 foreach ($all_themes as $theme) {
-  $themes{ $theme->stylesheet } = array(
-    'Name' => $theme->get('Name'),
-    'Status' => $theme->get('Status')
-  );
+  echo ('<b>Nombre del Tema: </b>'),($theme->get('Name')),"<br>";
+  echo ('<b>Estado del Tema: </b>'),($theme->get('Status')),"<br>";
 }
 
-// Imprimir Temas
-echo('<pre>');
-var_dump($themes);
-echo('</pre>');
+#Espacio
 
 /** Lista de Plugins Instalados **/
-echo "Lista de Plugins Instalados/Activos: ",
+echo "<b>Lista de Plugins Instalados/Activos: </b>",
 $author_id = get_the_author_meta('ID');
 echo count_user_posts($admin),"<br>";
 
 /** Numero de Paginas Publicadas **/
 $count_pages = wp_count_posts('page');
 	$total_pages = $count_pages->publish;
-	echo "Numero de Paginas Publicadas: ", $total_pages,"<br>";
+	echo "<b>Numero de Paginas Publicadas: </b>", $total_pages,"<br>";
 
 /** Numero de Post Publicados **/
-echo "Numero de Post Publicados: ",
+echo "<b>Numero de Post Publicados: </b>",
 $author_id = get_the_author_meta('ID');
 echo count_user_posts($admin),"<br>";
 
