@@ -1,6 +1,6 @@
 # ScanToolWP
 ScanToolWP by Carlos Saumeth
-Wordpress Plugin Created to Display the Following Information:
+Wordpress plugin created to display this information:
 
 - Name of the Website.
 - Wordpress Version.
