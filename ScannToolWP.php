@@ -12,6 +12,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
  
+/** Creacion de Menu y Submenus Plugin **/
 add_action("admin_menu", "ScanToolWpMenu");
 function ScanToolWpMenu()
 {
@@ -22,6 +23,8 @@ function ScanToolWpMenu()
 
 add_action ('admin_menu', 'ScanToolWpMenu');
 
+
+/** Funcion Menu Home **/
 function STWPHomeMenu()
 {
     
@@ -32,25 +35,39 @@ echo "<a href='../wp-admin/admin.php?page=STWP-About'><button>About</button></a>
 
 }
 
+/** Funcion Menu Dashboard **/
 function STWPDashboard()
 {
     
 echo "<h2>Datos Sitio Web</h2>";
 echo "Nombre del Sitio Web: ", get_bloginfo( 'name' ), "<br>";
-echo "Version Instalacion Wordpress: ", bloginfo('version'), "<br>";
 echo "Direccion de Instalacion: ", home_url(),"<br>";
+echo "Direccion del Sitio Web: ", site_url(),"<br>";
+echo "Version Instalacion Wordpress: ", bloginfo('version'), "<br>";
 
-$count_pages = wp_count_posts('page');
-	$total_pages = $count_pages->publish;
-	echo "Numero de Paginas Creadas: ", $total_pages,"<br>";
-
-echo "Numero de Post Creados: ",
+/** Lista de Temas Instalados **/
+echo "Lista de Temas Instalados/Activos: ",
 $author_id = get_the_author_meta('ID');
 echo count_user_posts($admin),"<br>";
 
+/** Lista de Plugins Instalados **/
+echo "Lista de Plugins Instalados/Activos: ",
+$author_id = get_the_author_meta('ID');
+echo count_user_posts($admin),"<br>";
+
+/** Numero de Paginas Publicadas **/
+$count_pages = wp_count_posts('page');
+	$total_pages = $count_pages->publish;
+	echo "Numero de Paginas Publicadas: ", $total_pages,"<br>";
+
+/** Numero de Post Publicados **/
+echo "Numero de Post Publicados: ",
+$author_id = get_the_author_meta('ID');
+echo count_user_posts($admin),"<br>";
 
 }
 
+/** Funcion Menu About **/
 function STWPAbout()
 {
 echo "<h2>About</h2>";
